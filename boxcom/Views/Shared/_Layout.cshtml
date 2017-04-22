@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>BoxCom — service for boxer's compare.</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=1280">
+    <link rel="stylesheet" type="text/css" href="~/Content/main.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="icon" href="~/Content/img/favicon.ico">
+    <link rel="shortcut icon" href="~/Content/img/favicon.ico">
+</head>
+<body>
+    <footer>
+        <div id="toolbar">
+            <div id="toolbar-title">
+                <!--BoxCom-->
+                <a href="/Home/Index" style="text-decoration: none; color:white;">BoxCom</a>
+            </div>
+            <div id="toolbar-title-2">
+                <a href="/Compare/Select" style="text-decoration: none; color:white;">compare boxers</a>
+                <!--compare boxers-->
+            </div>
+            <div id="toolbar-menu">
+                <a href="/Compare/Select" style="text-decoration: none; color:white;">Compare</a>
+                |
+                <a href="/Compare/Catalog" style="text-decoration: none; color:white;">Catalog</a>
+                <!--Compare | Catalog-->
+            </div>
+            <div id="toolbar-exit">
+                <img src="~/Content/img/exit.png" width="20px">
+            </div>
+        </div>
+    </footer>
+    @RenderBody()
+</body>
+</html>

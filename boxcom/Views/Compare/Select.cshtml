@@ -1,0 +1,18 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="body">
+    <div id="title-body">
+        Try to compare two boxers
+    </div>
+    <div id="body-search-fields">
+        <form action="/Compare/Result" method="post">
+            <div class="body-boxer-search"><input type="text" name="b1"></div>
+            <div class="body-boxer-search">VS</div>
+            <div class="body-boxer-search"><input type="text" name="b2"></div>
+            <div class="body-boxer-search"><input type="submit"></div>
+        </form>
+    </div>
+</div>

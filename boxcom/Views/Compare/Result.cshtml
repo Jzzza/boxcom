@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Result";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<boxcom.Models.Boxer>
+
+<div id="body">
+    <div id="reg-page">
+        <div id="boxer-wrapper">
+            <div id="boxer-left">
+                <div id="boxer-left-img">
+                    <img src=@Model.First().LINK_PHOTO>
+                </div>
+                <div class="boxer-content">
+                    <div class="boxer-title">
+                    </div>
+                    <div clas="boxer-params">                       
+                        <li>Name: @Model.First().NAME</li>
+                        <li>Born: @Model.First().BORN</li>
+                        <li>Debut: @Model.First().DEBUT</li>
+                        <li>Bouts: @Model.First().BOUTS</li>
+                        <li>Rounds: @Model.First().ROUNDS</li>
+                        <li>HEIGHT: @Model.First().HEIGHT</li>
+                        <li>REACH: @Model.First().REACH</li>
+                    </div>
+                    <div class="boxer-rates">
+                        <div>
+                            @Model.First().W
+                        </div>
+                        <div>
+                            @Model.First().L
+                        </div>
+                        <div>
+                            @Model.First().D
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="boxer-right">
+                <div id="boxer-right-img">
+                </div>
+                <div class="boxer-content">
+                    <div class="boxer-title">
+                    </div>
+                    <div clas="boxer-params">
+                        <li>Name: @ViewBag.b2</li>
+                        <li>Role: boxer</li>
+                        <li>Rating: 5 stars</li>
+                        <li>Bouts: 34</li>
+                        <li>Rounds: 121</li>
+                        <li>KOS: 91%</li>
+                    </div>
+                    <div class="boxer-rates">
+                        <div>
+                            56
+                        </div>
+                        <div>
+                            0
+                        </div>
+                        <div>
+                            5
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="koeff-wrapper">
+            <div id="koeff-left">
+                Коэффициент — 1
+            </div>
+            <div id="koeff-right">
+                Коэффициент — 1
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище FromBoxRecModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Boxer">
+          <Key>
+            <PropertyRef Name="IdBoxer" />
+          </Key>
+          <Property Name="IdBoxer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar(max)" />
+          <Property Name="LINK_PHOTO" Type="ntext" />
+          <Property Name="W" Type="int" />
+          <Property Name="L" Type="int" />
+          <Property Name="D" Type="int" />
+          <Property Name="KO" Type="int" />
+          <Property Name="LOSS_KO" Type="int" />
+          <Property Name="RANKING" Type="nvarchar" MaxLength="50" />
+          <Property Name="ROUNDS" Type="int" />
+          <Property Name="DEBUT" Type="date" />
+          <Property Name="HEIGHT" Type="int" />
+          <Property Name="REACH" Type="int" />
+          <Property Name="BOUTS" Type="int" StoreGeneratedPattern="Computed" />
+          <Property Name="BORN" Type="date" />
+        </EntityType>
+        <EntityType Name="FightsDesc">
+          <Key>
+            <PropertyRef Name="IdFight" />
+          </Key>
+          <Property Name="IdFight" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="INFO" Type="nvarchar(max)" />
+          <Property Name="DESC" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="Хранилище FromBoxRecModelContainer">
+          <EntitySet Name="Boxer" EntityType="Self.Boxer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FightsDesc" EntityType="Self.FightsDesc" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FromBoxRecModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Boxer">
+          <Key>
+            <PropertyRef Name="IdBoxer" />
+          </Key>
+          <Property Name="IdBoxer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LINK_PHOTO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="W" Type="Int32" />
+          <Property Name="L" Type="Int32" />
+          <Property Name="D" Type="Int32" />
+          <Property Name="KO" Type="Int32" />
+          <Property Name="LOSS_KO" Type="Int32" />
+          <Property Name="RANKING" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ROUNDS" Type="Int32" />
+          <Property Name="DEBUT" Type="DateTime" Precision="0" />
+          <Property Name="HEIGHT" Type="Int32" />
+          <Property Name="REACH" Type="Int32" />
+          <Property Name="BOUTS" Type="Int32" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="BORN" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="FightsDesc">
+          <Key>
+            <PropertyRef Name="IdFight" />
+          </Key>
+          <Property Name="IdFight" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="INFO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="FromBoxRecEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Boxer" EntityType="Self.Boxer" />
+          <EntitySet Name="FightsDesc" EntityType="Self.FightsDesc" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище FromBoxRecModelContainer" CdmEntityContainer="FromBoxRecEntities2">
+          <EntitySetMapping Name="Boxer">
+            <EntityTypeMapping TypeName="FromBoxRecModel.Boxer">
+              <MappingFragment StoreEntitySet="Boxer">
+                <ScalarProperty Name="IdBoxer" ColumnName="IdBoxer" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="LINK_PHOTO" ColumnName="LINK_PHOTO" />
+                <ScalarProperty Name="W" ColumnName="W" />
+                <ScalarProperty Name="L" ColumnName="L" />
+                <ScalarProperty Name="D" ColumnName="D" />
+                <ScalarProperty Name="KO" ColumnName="KO" />
+                <ScalarProperty Name="LOSS_KO" ColumnName="LOSS_KO" />
+                <ScalarProperty Name="RANKING" ColumnName="RANKING" />
+                <ScalarProperty Name="ROUNDS" ColumnName="ROUNDS" />
+                <ScalarProperty Name="DEBUT" ColumnName="DEBUT" />
+                <ScalarProperty Name="HEIGHT" ColumnName="HEIGHT" />
+                <ScalarProperty Name="REACH" ColumnName="REACH" />
+                <ScalarProperty Name="BOUTS" ColumnName="BOUTS" />
+                <ScalarProperty Name="BORN" ColumnName="BORN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FightsDesc">
+            <EntityTypeMapping TypeName="FromBoxRecModel.FightsDesc">
+              <MappingFragment StoreEntitySet="FightsDesc">
+                <ScalarProperty Name="IdFight" ColumnName="IdFight" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="INFO" ColumnName="INFO" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
